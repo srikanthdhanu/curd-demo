@@ -123,6 +123,21 @@ public class UserController {
 
     }
 
+    @DeleteMapping("/delete1/{id}")
+    public ResponseEntity<Users> deleteUserSitBranch1( @PathVariable("id") int id){
+        Users users = null;
+        // Git changes
+        try{
+            users = userService.deleteUser(id);
+
+        }catch (Exception e){
+            e.getMessage();
+        }
+
+        return  new ResponseEntity<Users>(users,HttpStatus.OK);
+
+    }
+
 
 
 
