@@ -92,6 +92,22 @@ public class UserController {
 
     }
 
+    //Just for git check out
+    @DeleteMapping("/delete1/{id}")
+    public ResponseEntity<Users> deleteUser4( @PathVariable("id") int id){
+        Users users = null;
+        // Git changes
+        try{
+            users = userService.deleteUser(id);
+
+        }catch (Exception e){
+            e.getMessage();
+        }
+
+        return  new ResponseEntity<Users>(users,HttpStatus.OK);
+
+    }
+
 
 
 
